@@ -13,7 +13,11 @@ class PlaygroundScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            InputText(color: Colors.green[300]),
+            InputText(
+              color: Colors.green[300],
+              text: "PASSWORD",
+              isPassword: true,
+            ),
           ],
         ),
       ),
