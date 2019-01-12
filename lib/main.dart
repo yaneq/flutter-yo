@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yoapp/scenes/playground.dart';
+import 'package:yoapp/scenes/welcome/sceen.dart';
 
 void main() => runApp(App());
 
@@ -14,11 +15,12 @@ class App extends StatelessWidget {
       title: 'yo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.purple[300],
+        scaffoldBackgroundColor: Color.fromRGBO(114, 38, 115, 1.0),
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => PlaygroundScreen(),
+        '/': (context) => WelcomeScreen(),
+        '/playground': (context) => PlaygroundScreen(),
       },
     );
   }
