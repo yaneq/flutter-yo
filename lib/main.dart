@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:providerscope/providerscope.dart';
+
 import 'package:yoapp/scenes/playground.dart';
 import 'package:yoapp/scenes/welcome/sceen.dart';
-import 'package:yoapp/scenes/welcome/scenes/signin/screen.dart';
 import 'package:yoapp/scenes/welcome/scenes/signup/screen.dart';
+import 'package:yoapp/scenes/welcome/scenes/signin/screen.dart';
 
-void main() => runApp(App());
+import 'package:yoapp/models/user_model.dart';
+
+const ProviderScope userScope = ProviderScope('user');
+Providers providers = Providers()..provideValue(UserModel(), scope: userScope);
+
+void main() => runApp(ProviderNode(
+      providers: providers,
+      child: App(),
+    ));
 
 class App extends StatelessWidget {
   App({
@@ -14,10 +24,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'yo',
+      title: "yo",
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Color.fromRGBO(114, 38, 115, 1.0),
+        scaffoldBackgroundColor: Colors.purple[300],
       ),
       initialRoute: '/signin',
       routes: {
