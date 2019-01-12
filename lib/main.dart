@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yoapp/scenes/playground.dart';
 import 'package:yoapp/scenes/welcome/sceen.dart';
+import 'package:yoapp/scenes/welcome/scenes/signup/screen.dart';
 
 void main() => runApp(App());
 
@@ -17,10 +18,11 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Color.fromRGBO(114, 38, 115, 1.0),
       ),
-      initialRoute: '/',
+      initialRoute: '/signup',
       routes: {
         '/': (context) => WelcomeScreen(),
         '/playground': (context) => PlaygroundScreen(),
+        '/signup': (context) => SignupScreen(),
       },
     );
   }
